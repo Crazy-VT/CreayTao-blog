@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>animotion</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .Taiji{
+            width: 0;
+            height: 400px;
+            margin: 0 auto;
+            border-left: 200px solid black;
+            border-right: 200px solid red;
+            border-radius: 50%;
+            position: relative;
+            animation: taiji 1s infinite linear;
+            z-index: 999999999999999;
+        }
+        .Taiji::before{
+             /*display: block;*/
+             content: "";
+             width: 200px;
+             height: 200px;
+             border-radius: 50%;
+             background: black;
+             position: absolute;
+             top: 0;
+             left: -100px;
+         }
+        @keyframes taiji{
+            form{
+                transform: rotateZ(0deg);
+            }
+            to{
+                transform: rotateZ(360deg);
+            }
+          }
+        .Taiji::after{
+            /*display: block;*/
+            content: "";
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: red;
+            position: absolute;
+            bottom: 0px;
+            left: -100px;
+        }
+        .out-top , .out-bottom{
+            width: 50px;
+            height: 50px;
+            background: #2affe1;
+            border-radius: 50%;
+            position: absolute;
+            left: -25px;
+        }
+        .out-top{
+            top: 75px;
+            background: red;
+        }
+        .out-bottom{
+            bottom: 75px;
+            background: black;
+            z-index: 100;
+        }
+        .loading{
+            width: 200px;
+            height: 70px;
+            /*border: 1px solid #9a9a9a;*/
+            margin: 20px auto;
+        }
+        .loading div{
+            width: 15px;
+            height: 50px;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        .loading div:nth-child(1){
+            background: rgba(110, 110, 110, 0.8);
+            animation: loading 0.5s infinite linear 0s;
+        }
+        .loading div:nth-child(2){
+            background: red;
+             animation: loading 0.5s infinite linear 0.1s;
+         }
+        .loading div:nth-child(3){
+            background: #39ee06;
+            animation: loading 0.5s infinite linear 0.2s;
+        }
+        .loading div:nth-child(4){
+            background: blue;
+            animation: loading 0.5s infinite linear 0.3s;
+        }
+        .loading div:nth-child(5){
+            background: #dc3a0d;
+            animation: loading 0.5s infinite linear 0.4s;
+        }
+        @keyframes loading {
+            0%{
+                transform: scaleY(0.6);
+            }
+            20%{
+                transform: scaleY(0.8);
+            }
+            40%{
+                transform: scaleY(1.0);
+            }
+            60%{
+                transform: scaleY(1.2);
+            }
+            80%{
+                transform: scaleY(1.4);
+            }
+        }
+    .loading1{
+        width: 50px;
+        height: 50px;
+        background: #e4e3e3;
+        margin: 10px auto;
+        border: 5px solid #9a9a9a;
+        border-top: 5px solid black;
+        border-radius: 50%;
+        animation: loading1 1s infinite linear;
+    }
+        @keyframes loading1 {
+            from{
+                transform: rotateZ(0deg);
+            }
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+        .mask{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #9a9a9a;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            margin: 400px auto;
+            background: #00c1de;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="Taiji">
+        <div class="out-top"></div>
+        <div class="out-bottom"></div>
+    </div>
+    <div class="loading">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="loading1">
+    </div>
+
+</body>
+</html>
